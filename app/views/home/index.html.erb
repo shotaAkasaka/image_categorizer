@@ -1,0 +1,29 @@
+<h1>正しいカテゴリーを選んでね♪</h1>
+<% if @end_flag then %>
+  <h2>終了です！！おつかれさまでした〜。</h2>
+<% else  %>
+    <span>記念すべき<%= $count + 1 %>枚目！！！</span>
+    <span>残り<%= @count_down  %>枚です。ガンバ！！！</span>
+    <div>
+    <img src="assets/<%= $ryokan[$count][0] %>/<%= $ryokan[$count][1]  %>"width=400 height=300">
+  </div>
+    <%= form_tag({controller: :home, action: :index}, method: "get" ) do  %>
+      <% submit_tag("施設外観", class: "btn")  %>
+    <% end %>
+    <%= form_tag({controller: :home, action: :index}, method: "get") do  %>
+      <%= submit_tag("施設内観", class: "btn")  %>
+    <% end %>
+    <%= form_tag({controller: :home, action: :index}, method: "get") do  %>
+      <%= submit_tag("食事", class: "btn")  %>
+    <% end %>
+    <%= form_tag({controller: :home, action: :index}, method: "get") do  %>
+      <%= submit_tag("風呂", class: "btn")  %>
+    <% end %>
+    <%= form_tag({controller: :home, action: :index}, method: "get") do  %>
+      <%= submit_tag("景色", class: "btn")  %>
+    <% end %>
+    <%= form_tag({controller: :home, action: :index}, method: "get") do  %>
+      <%= submit_tag("その他", class: "btn")  %>
+    <% end %> 
+<% end  %>
+
